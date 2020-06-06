@@ -1,0 +1,119 @@
+/* RALEWAY FONT */
+/* ==================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+/* DEFAULTS */
+/* ==================================================== */
+:root {
+    --global-c: hsl(0, 0%, 90%);
+    --global-bg: hsl(210, 25%, 10%);
+}
+
+body {
+    color: var(--global-c);
+    background: var(--global-bg);
+    font-family: Raleway;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meta {
+    padding-top: 5vh;
+}
+
+.meta,
+main {
+    padding-bottom: calc(100px + 5vh);
+    text-align: center;
+}
+
+/* MAIN */
+/* ==================================================== */
+button {
+    display: inline-block;
+    border: none;
+    border-radius: 100px;
+    margin: 20px 20px 80px;
+    padding: 4px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right bottom, var(--bg));
+    position: relative;
+    cursor: pointer;
+}
+
+button:before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    display: inline-block;
+    background: linear-gradient(to right bottom, var(--bg));
+    position: absolute;
+    top: 200%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+button:nth-child(2n)::before {
+    top: -100%;
+    left: 100%;
+    opacity: .8;
+    width: .5em;
+    height: .5em;
+}
+
+span {
+    display: inherit;
+    border-radius: inherit;
+    padding: 12px 36px;
+    color: var(--global-c);
+    box-shadow: inset 0 0 0 1000px var(--global-bg);
+    transition: all .2s;
+}
+
+button:nth-of-type(2n) span {
+    opacity: .8;
+}
+
+button:hover span,
+button:focus span {
+    color: var(--ic);
+    box-shadow: none;
+}
+
+/* ABS */
+/* ==================================================== */
+.abs-site-link {
+    position: fixed;
+    z-index: 11;
+    top: 40px;
+    right: 40px;
+    color: var(--global-c);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--global-bg);
+    opacity: .8;
+    letter-spacing: 10px;
+}
+
+.abs-site-link:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    width: 100%;
+    border-bottom: 2px solid currentColor;
+    transform: translateX(50%);
+    pointer-events: none;
+    opacity: .5;
+}
